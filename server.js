@@ -48,7 +48,7 @@ io.on("connection", (socket) => {
     console.log("User disconnected:", socket.id);
   });
 });
-const PORT = 8000 || process.env.PORT;
+const PORT = 8001 || process.env.PORT;
 server.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
 });
