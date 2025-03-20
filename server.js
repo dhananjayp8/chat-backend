@@ -2,7 +2,7 @@ const express = require("express");
 const http = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
-
+require("dotenv").config();
 const app = express();
 app.use(cors());
 
@@ -48,7 +48,7 @@ io.on("connection", (socket) => {
     console.log("User disconnected:", socket.id);
   });
 });
-const PORT = 8001 || process.env.PORT;
+const PORT = process.env.PORT || 8001;
 server.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
 });
